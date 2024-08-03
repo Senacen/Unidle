@@ -2,6 +2,7 @@ package com.senacen.Unidle;
 
 
 import com.senacen.Unidle.run.Location;
+import com.senacen.Unidle.run.RunRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -33,10 +34,10 @@ public class UnidleApplication {
 	}
 
 	@Bean
-	CommandLineRunner runner() {
+	CommandLineRunner runner(RunRepository runRepository) {
 		return args -> {
-			Run run = new Run(1, "First Run", LocalDateTime.now(), LocalDateTime.now().plus(1, ChronoUnit.HOURS), 3, Location.OUTDOORS);
-			log.info("Run: " + run);
+//			Run run = new Run(1, "First Run", LocalDateTime.now(), LocalDateTime.now().plus(1, ChronoUnit.HOURS), 3, Location.OUTDOORS);
+//			runRepository.create(run);
 		};
 
 	}
